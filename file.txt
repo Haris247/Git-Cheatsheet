@@ -1,140 +1,206 @@
 GIT NOTES COMMANDS:
+
 GIT LIFECYCLE:
 UNTRACTED-->UNMODIFIED-->STAGED-->UNMODIFIED
+
 1)Configuring Git Commands:
+
 Adding User Name:
 Git config --global user.name “haris”
 Git congif --global user.email “haris.akram764@gmail.com”
+
 List User Name:
 Git config --global --list
+
 Delete User Name:
 Git config --global --unset user.name
 Git config --global --unset user.email
+
 2)Git Status Commands:
 Git status
+
 3)Git Clone Command:
 Git clone <URL>
+
 4)Add a file to staging area Command:
 Git add . (for all files )
 Git add abc.txt (for one file abc.txt)
+
 5)Git commit Command:
 Git commit –m “this is commit message”
 Git commit –a –m “this is commit message” (skipping staged area)
+
 6)GIt push Command:
 Git push origin main (for pushing main branch)
 Git push origin feature(for pushing feature branch)
 Git push –u origin main (so next time  it will be only git push)
+
 7)Git pull command:
 Git pull 
+
 8)Git command to add origin:
+
 Add Origin:
 Git remote add origin <url>
+
 View Origin:
 Git remote –v
+
 Delete Origin:
 Git remote remove origin
+
 8)Branches in Git:
+
 View branches:
 Git branch
+
 Create New Branch:
 Git branch feature
+
 Change branch:
 Git checkout feature
+
 Create and Change branch:
 Git checkout –b feature
+
 Git rename Branch:
 Git branch –m newName (mush checkout the branch whose name you want to change)
+
 Delete Branch:
 Git branch –d branchName (never run command on current branch otherwise you delete the point of reference)
+
 9)Merge Branch:
 Git merge feature (current branch main)
+
 10)Git Diff:
 Git diff branchName (to compare commits, files etc )
+
 11)Gitignore:
 Touch .gitignore
+
 12)Remove File In Git:
 Git rm –f abc.txt
+
 13)Git Ammend Command:
 Git commit --amend (to change the message in commit or minor changes in commit)
+
 14)Git Reset for Undoing Changes:
+
 Staging Area to Modified Area:
 Git reset abc.txt ( from staging area to modified area)
+
 Git Reset HEAD:
 Git reset HEAD~1 OR Git reset HEAD~2 OR Git reset CommitHash
 Undoing changes to last 1 or last 2 or last or commitHash
+
 Modified Area to Unmodified Area:
 Git checkout -- abc.txt( from modified area to unmodified area-->to last commit or last staged area)
+
 GIt Reset Soft:
 Git reset --soft commitHash (head points where you want, commits not deleted, changes adds to staging area)
+
 GIt Reset Hard:
 Git reset --hard commitHash (head points where you want, commits deleted, files also deleted)
+
 GIt Reset MIxed:
 Git reset --mixed commitHash (head points where you want, commits never deleted, files becomes untracked)
+
 15)Git Restore:
 Git restore --staged (from staging area to modified stage)
 Git restore (from modified to unmodified stage-->last commit or last staged)
+
 16)Git Fetch Command:
 Git fetch (changes comes from remote to local but not in working directory)
 Git merge (to show changes in working directory after git fetch command)
+
 17)Git Log Command:
+
 Show all Commits:
 Git log (to show all logs of commit)
+
 Show latest 2 Commit:
 Git log -2
+
 Show all Commits in One Line With One Latest Commit:
 Git log --oneline
+
 18)Git Rebase:
 Git rebase main (run command on current branch (feature) to rebase on main) 
+
 Interactive Rebase:
 Git rebase i main
+
 19)Git Revert:
 Git revert CommitHast or HEAD 
 (safe method of undo with preserve history (reset rewrite history)and can get changes back if we want)
+
 20)Git Reflog:
 Git reflog main (shows the history with actions)
+
 21)Git Cheery pick:
 Git cherry-pick CommitHash (usecase undoing,team,bug)
 B2 wants commithash of B1, checkout B2 and then run the command with commithash of B1
+
 22)Git Bisect Command:
-Used to find the bad commit, it searches the faulty commit
+Used to find the bad commit, it searches the faulty commit.
+
 Git bisect start (to start the tool)
 Git bisect Good commithash
 Git bisect bad (commithash is optional)
 Git bisect reset (to end the tool)
+
 23)Git blame:
 Git blame abc.txt (tells which line of code change by which team member in a file with timestamp)
+
 24)Git Show
 Git show commitHash (expanded details of commits)
+
 25)Git Tags
+
 List All Tag:
 Git tag (tags are used to differentiate/name/alias a special commit(version commit v1) to other commits)
+
 Show Tag:
 Git show v1
+
 Create Tag:
 Git tag v1 commitHash
+
 Delete Tag:
 Git tag –d v1
+
 26)Git Stash:
+
 Create Stash:
 Git stash
+
 List Stash:
 Git stash list
+
 Clear Stash:
 Git stash clear
+
 Apply Stash:
 Git stash apply stashID
+
 Add Message With Stash:
 Git stash save “message”
+
 Drop Stash:
 Git drop stash stashID
+
 Pop Stash:
 Git pop stash stashID
+
 27)Git Submodule:
 Use to add external git repo as a subdirectory in a repo
+
 Initializaing Submodule:
 Git submodule init
+
 Adding Submodule:
 Git submodule add URL
+
 28)Git Subtrees:
 Use to make multiple repos in a repo
 
